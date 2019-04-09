@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		60BA3B100F83A85C838E1634 /* Pods_BPBLEDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD86670C5F33B30A7E182BD5 /* Pods_BPBLEDemo.framework */; };
+		E2491D00225C961C008E7CE0 /* s02_0004_0120.zip in Resources */ = {isa = PBXBuildFile; fileRef = E2491CF8225C961C008E7CE0 /* s02_0004_0120.zip */; };
+		E2491D01225C961C008E7CE0 /* s02_0101_0122.zip in Resources */ = {isa = PBXBuildFile; fileRef = E2491CF9225C961C008E7CE0 /* s02_0101_0122.zip */; };
+		E2491D02225C961C008E7CE0 /* s02_0100_0122.zip in Resources */ = {isa = PBXBuildFile; fileRef = E2491CFA225C961C008E7CE0 /* s02_0100_0122.zip */; };
+		E2491D03225C961C008E7CE0 /* s02_0006_0120.zip in Resources */ = {isa = PBXBuildFile; fileRef = E2491CFB225C961C008E7CE0 /* s02_0006_0120.zip */; };
+		E2491D04225C961C008E7CE0 /* s02_dfu_0006.zip in Resources */ = {isa = PBXBuildFile; fileRef = E2491CFD225C961C008E7CE0 /* s02_dfu_0006.zip */; };
+		E2491D05225C961C008E7CE0 /* s02_dfu_0004.zip in Resources */ = {isa = PBXBuildFile; fileRef = E2491CFE225C961C008E7CE0 /* s02_dfu_0004.zip */; };
+		E2491D06225C961C008E7CE0 /* s02_dfu_0100.zip in Resources */ = {isa = PBXBuildFile; fileRef = E2491CFF225C961C008E7CE0 /* s02_dfu_0100.zip */; };
 		E29619D3225B685A00AD4032 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E29619D2225B685A00AD4032 /* AppDelegate.m */; };
 		E29619DB225B685C00AD4032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E29619DA225B685B00AD4032 /* Assets.xcassets */; };
 		E29619DE225B685C00AD4032 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29619DC225B685C00AD4032 /* LaunchScreen.storyboard */; };
@@ -23,6 +30,13 @@
 		23CC95989AB596853BE6C752 /* Pods-BPBLEDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BPBLEDemo.debug.xcconfig"; path = "Target Support Files/Pods-BPBLEDemo/Pods-BPBLEDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		5B0AB4CAF88C2A806A8DA325 /* Pods-BPBLEDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BPBLEDemo.release.xcconfig"; path = "Target Support Files/Pods-BPBLEDemo/Pods-BPBLEDemo.release.xcconfig"; sourceTree = "<group>"; };
 		BD86670C5F33B30A7E182BD5 /* Pods_BPBLEDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BPBLEDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2491CF8225C961C008E7CE0 /* s02_0004_0120.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = s02_0004_0120.zip; sourceTree = "<group>"; };
+		E2491CF9225C961C008E7CE0 /* s02_0101_0122.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = s02_0101_0122.zip; sourceTree = "<group>"; };
+		E2491CFA225C961C008E7CE0 /* s02_0100_0122.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = s02_0100_0122.zip; sourceTree = "<group>"; };
+		E2491CFB225C961C008E7CE0 /* s02_0006_0120.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = s02_0006_0120.zip; sourceTree = "<group>"; };
+		E2491CFD225C961C008E7CE0 /* s02_dfu_0006.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = s02_dfu_0006.zip; sourceTree = "<group>"; };
+		E2491CFE225C961C008E7CE0 /* s02_dfu_0004.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = s02_dfu_0004.zip; sourceTree = "<group>"; };
+		E2491CFF225C961C008E7CE0 /* s02_dfu_0100.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = s02_dfu_0100.zip; sourceTree = "<group>"; };
 		E29619CE225B685A00AD4032 /* BPBLEDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BPBLEDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29619D1225B685A00AD4032 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E29619D2225B685A00AD4032 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +86,36 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E2491CF6225C961C008E7CE0 /* BLEHardwarePackages */ = {
+			isa = PBXGroup;
+			children = (
+				E2491CF7225C961C008E7CE0 /* Firmware */,
+				E2491CFC225C961C008E7CE0 /* Boostloader */,
+			);
+			path = BLEHardwarePackages;
+			sourceTree = "<group>";
+		};
+		E2491CF7225C961C008E7CE0 /* Firmware */ = {
+			isa = PBXGroup;
+			children = (
+				E2491CF8225C961C008E7CE0 /* s02_0004_0120.zip */,
+				E2491CF9225C961C008E7CE0 /* s02_0101_0122.zip */,
+				E2491CFA225C961C008E7CE0 /* s02_0100_0122.zip */,
+				E2491CFB225C961C008E7CE0 /* s02_0006_0120.zip */,
+			);
+			path = Firmware;
+			sourceTree = "<group>";
+		};
+		E2491CFC225C961C008E7CE0 /* Boostloader */ = {
+			isa = PBXGroup;
+			children = (
+				E2491CFD225C961C008E7CE0 /* s02_dfu_0006.zip */,
+				E2491CFE225C961C008E7CE0 /* s02_dfu_0004.zip */,
+				E2491CFF225C961C008E7CE0 /* s02_dfu_0100.zip */,
+			);
+			path = Boostloader;
+			sourceTree = "<group>";
+		};
 		E29619C5225B685A00AD4032 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +137,7 @@
 		E29619D0225B685A00AD4032 /* BPBLEDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E2491CF6225C961C008E7CE0 /* BLEHardwarePackages */,
 				E29619D1225B685A00AD4032 /* AppDelegate.h */,
 				E29619E9225B692300AD4032 /* BPBLEDemo-Bridging-Header.h */,
 				E29619D2225B685A00AD4032 /* AppDelegate.m */,
@@ -138,8 +183,8 @@
 		E29619FA225B6B1300AD4032 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E29619FB225B6B1300AD4032 /* BPConnectedVC.m */,
 				E29619FC225B6B1300AD4032 /* BPConnectedVC.h */,
+				E29619FB225B6B1300AD4032 /* BPConnectedVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,8 +283,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2491D03225C961C008E7CE0 /* s02_0006_0120.zip in Resources */,
+				E2491D02225C961C008E7CE0 /* s02_0100_0122.zip in Resources */,
+				E2491D04225C961C008E7CE0 /* s02_dfu_0006.zip in Resources */,
+				E2491D06225C961C008E7CE0 /* s02_dfu_0100.zip in Resources */,
+				E2491D01225C961C008E7CE0 /* s02_0101_0122.zip in Resources */,
 				E29619DE225B685C00AD4032 /* LaunchScreen.storyboard in Resources */,
+				E2491D00225C961C008E7CE0 /* s02_0004_0120.zip in Resources */,
 				E29619DB225B685C00AD4032 /* Assets.xcassets in Resources */,
+				E2491D05225C961C008E7CE0 /* s02_dfu_0004.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

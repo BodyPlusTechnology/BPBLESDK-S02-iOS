@@ -469,7 +469,7 @@ typedef NS_ENUM(NSUInteger, CellType) {
 
 #pragma mark - Getter
 
-- (UITableView *)tableView {
+- (UITableView *)tableView {g
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _tableView.delegate = self;
