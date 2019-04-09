@@ -1,0 +1,6 @@
+framework module BPBLESDK {
+  umbrella header "BPBLESDK.h"
+
+  export *
+  module * { export * }
+}
