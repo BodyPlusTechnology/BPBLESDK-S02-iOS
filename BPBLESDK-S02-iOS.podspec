@@ -7,6 +7,10 @@ Pod::Spec.new do |s|
   s.summary      = 'A BLE SDK of Aerobic(Core S02)'
   s.platform     =  :ios, '9.0'
   s.source       =  { :git => 'https://github.com/BodyPlusTechnology/BPBLESDK-S02-iOS.git', :tag => '0.0.1' }
-  s.vendored_frameworks = "FatArchitecture/BPBLESDK.framework"
+  s.source_files = 'FatArchitecture/**/*.{a,h}'
+  #s.vendored_frameworks = "FatArchitecture/BPBLESDK.framework"
   s.requires_arc = true
+  s.swift_version = '4.2'
+  s.dependency 'SSZipArchive'
+  s.dependency 'iOSDFULibrary'
 end

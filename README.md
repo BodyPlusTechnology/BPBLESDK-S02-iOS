@@ -15,9 +15,17 @@ SDK provides these major functions blow:
 * Boost loader upgrade.
 * Auto-Reconnect Aerobic Core.
 
-# Install 
+# Cocoa Pods 
 
-building...
+Add Codes in Podfile:
+
+> pod 'BPBLESDK-S02-iOS'
+
+or 
+
+> pod 'BPBLESDK-S02-iOS', :git => 'https://github.com/BodyPlusTechnology/BPBLESDK-S02-iOS.git'
+
+
 
 # API Preview
 
