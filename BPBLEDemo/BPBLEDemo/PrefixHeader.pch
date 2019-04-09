@@ -1,0 +1,30 @@
+//
+//  PrefixHeader.pch
+//  BPBLEDemo
+//
+//  Created by GrayLand on 2019/3/26.
+//  Copyright © 2019 BodyPlus. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "Masonry.h"
+#import "YYKit.h"
+#import "NSObject+BPHUD.h"
+
+#define UIColorFromRGBA(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+#define FONT_COLOR1 UIColorFromRGBA(255, 111, 91, 1)
+
+#define     STATUS_BAR_REAL_HEIGHT          [UIApplication sharedApplication].statusBarFrame.size.height
+#define     NAVIGATION_BAR_HEIGHT           (self.navigationController?self.navigationController.navigationBar.frame.size.height:44.0f)
+#define     STATUS_AND_NAVIGATION_HEIGHT    (STATUS_BAR_REAL_HEIGHT + NAVIGATION_BAR_HEIGHT)
+
+#define SCREEN_WIDTH            [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT           [UIScreen mainScreen].bounds.size.height
+#define SCALE_WIDTH(pt)         (pt)/375.0 * KScreenWidth //375
+#define SCALE_HEIGHT(pt)        (pt)/667.0 * KScreenHeight//667
+
+#endif /* PrefixHeader_pch */

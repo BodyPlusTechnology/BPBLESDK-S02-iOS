@@ -1,0 +1,44 @@
+PODS:
+  - BPBLESDK-S02-iOS (0.0.1):
+    - iOSDFULibrary (= 4.3.0)
+    - SSZipArchive
+  - iOSDFULibrary (4.3.0):
+    - ZIPFoundation (~> 0.9.8)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.0.0)
+  - SSZipArchive (2.1.5)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+  - ZIPFoundation (0.9.8)
+
+DEPENDENCIES:
+  - BPBLESDK-S02-iOS
+  - iOSDFULibrary (~> 4.3.0)
+  - Masonry (= 1.1.0)
+  - MBProgressHUD (~> 1.0.0)
+  - SSZipArchive (~> 2.1.4)
+  - YYKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BPBLESDK-S02-iOS
+    - iOSDFULibrary
+    - Masonry
+    - MBProgressHUD
+    - SSZipArchive
+    - YYKit
+    - ZIPFoundation
+
+SPEC CHECKSUMS:
+  BPBLESDK-S02-iOS: ef74ccc72ab06ba1b482ee767658cb62d94cae99
+  iOSDFULibrary: 41a38d1d2550bf2b0c81e7ccd006af3a96c8149b
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  SSZipArchive: cefe1364104a0231268a5deb8495bdf2861f52f0
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+  ZIPFoundation: b1f07e4409baf1641f3fe5948b2a1c3f5c500cb1
+
+PODFILE CHECKSUM: 6b01bd826b27c0a6d413b11d00d6ede69f70c9c5
+
+COCOAPODS: 1.6.1
