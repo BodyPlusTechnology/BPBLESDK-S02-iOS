@@ -137,17 +137,17 @@
 		E29619D0225B685A00AD4032 /* BPBLEDemo */ = {
 			isa = PBXGroup;
 			children = (
-				E2491CF6225C961C008E7CE0 /* BLEHardwarePackages */,
 				E29619D1225B685A00AD4032 /* AppDelegate.h */,
-				E29619E9225B692300AD4032 /* BPBLEDemo-Bridging-Header.h */,
 				E29619D2225B685A00AD4032 /* AppDelegate.m */,
-				E29619E0225B685C00AD4032 /* main.m */,
-				E2961A36225B7D2D00AD4032 /* PrefixHeader.pch */,
-				E29619DF225B685C00AD4032 /* Info.plist */,
-				E29619EA225B692300AD4032 /* Nothing.swift */,
 				E29619DA225B685B00AD4032 /* Assets.xcassets */,
+				E2491CF6225C961C008E7CE0 /* BLEHardwarePackages */,
+				E29619E9225B692300AD4032 /* BPBLEDemo-Bridging-Header.h */,
+				E29619DF225B685C00AD4032 /* Info.plist */,
 				E29619DC225B685C00AD4032 /* LaunchScreen.storyboard */,
+				E29619E0225B685C00AD4032 /* main.m */,
 				E29619F8225B6B1300AD4032 /* Modules */,
+				E29619EA225B692300AD4032 /* Nothing.swift */,
+				E2961A36225B7D2D00AD4032 /* PrefixHeader.pch */,
 				E29619F5225B6B1300AD4032 /* Utils */,
 			);
 			path = BPBLEDemo;
