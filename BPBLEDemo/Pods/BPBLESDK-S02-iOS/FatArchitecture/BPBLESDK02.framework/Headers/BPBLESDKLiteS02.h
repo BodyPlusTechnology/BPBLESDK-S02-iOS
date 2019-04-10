@@ -10,6 +10,5 @@
 #define BPBLESDKLiteS02_h
 
 #import "BPBLEManagerS02.h"
-#import "BPBLEDeviceS02.h"
 
 #endif /* BPBLESDKLiteS02_h */

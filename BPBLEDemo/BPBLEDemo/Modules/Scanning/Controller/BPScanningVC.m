@@ -8,7 +8,7 @@
 
 #import "BPScanningVC.h"
 #import "BPConnectedVC.h"
-#import <BPBLESDK/BPBLESDKLiteS02.h>
+#import <BPBLESDK02/BPBLESDKLiteS02.h>
 #import <Masonry/Masonry.h>
 
 @interface BPScanningVC ()

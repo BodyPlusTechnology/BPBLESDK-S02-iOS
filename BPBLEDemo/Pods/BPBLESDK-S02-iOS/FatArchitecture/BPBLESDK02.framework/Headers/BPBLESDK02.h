@@ -16,16 +16,4 @@ FOUNDATION_EXPORT const unsigned char BPBLESDK02VersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <BPBLESDK02/PublicHeader.h>
 
-#import <BPBLESDK02/BPBLEDFUDevice.h>
-#import <BPBLESDK02/BPBLEBaseDevice.h>
-#import <BPBLESDK02/BPBLEDeviceControl.h>
-#import <BPBLESDK02/BPBLEDeviceS02.h>
-
-#import <BPBLESDK02/BPDeviceTypeDef.h>
-#import <BPBLESDK02/BPBLESDKLiteS02.h>
-
-#import <BPBLESDK02/BPBLEManagerS02.h>
-
-#import <BPBLESDK02/BPS02DFUConfig.h>
-#import <BPBLESDK02/BPS02OfflineDataModel.h>
 

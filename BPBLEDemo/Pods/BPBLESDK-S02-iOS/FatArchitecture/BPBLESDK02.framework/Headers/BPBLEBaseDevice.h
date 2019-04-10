@@ -39,25 +39,4 @@
 @property (nonatomic, strong) NSString *SN;
 @property (nonatomic, assign) NSInteger hwVersionInAD;
 
-+ (NSString *)deviceSNWithAD:(NSDictionary *)advertisementData;
-+ (BOOL)checkHasVersionInAD:(NSDictionary *)advertisementData;
-+ (uint16_t)dfuDeviceHardwareVersionWithAD:(NSDictionary *)advertisementData;
-+ (NSString *)deviceLocalNameWithAD:(NSDictionary *)advertisementData;
-+ (NSArray *)deviceUUIDsWithAD:(NSDictionary *)advertisementData;
-+ (BOOL)isDFUModeWithAD:(NSDictionary *)advertisementData;
-+ (BOOL)isDFUModeWithService:(CBService *)service;
-+ (NSArray *)bodyPlusService;
-+ (CBUUID *)uuidWithMode:(BPUUIDType)type;
-+ (NSInteger)hardwareVersionWithSN:(NSString *)snCode;
-//+ (NSString *)bluetoothNameWithType:(BPDeviceNameType)type;
-
-- (NSInteger)hwVersinWithSN:(NSString *)sn;
-- (void)setAdvertisementData:(NSDictionary *)advertisementData withAutoSet:(BOOL)autoSet;
-
-#pragma mark - Helper
-
-- (uint32_t)getInt32WithBytes:(const uint8_t *)bytes;
-
-- (uint16_t)getInt16WithBytes:(const uint8_t *)bytes;
-
 @end

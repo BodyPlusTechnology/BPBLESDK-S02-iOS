@@ -10,7 +10,7 @@
 #import "BPScanningVC.h"
 
 //#import "BPBLESDKLiteS02.h"
-#import <BPBLESDK/BPBLESDKLiteS02.h>
+#import <BPBLESDK02/BPBLESDKLiteS02.h>
 #import <Masonry/Masonry.h>
 
 @interface BPBLEDemoVC ()

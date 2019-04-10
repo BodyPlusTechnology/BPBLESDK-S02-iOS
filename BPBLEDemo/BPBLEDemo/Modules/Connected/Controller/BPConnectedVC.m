@@ -7,7 +7,7 @@
 //
 
 #import "BPConnectedVC.h"
-#import <BPBLESDK/BPBLESDKLiteS02.h>
+#import <BPBLESDK02/BPBLESDKLiteS02.h>
 #import <iOSDFULibrary-Swift.h>
 #import <Masonry/Masonry.h>
 
@@ -301,7 +301,7 @@ typedef NS_ENUM(NSUInteger, CellType) {
         }break;
         case CellTypeEraseOfflineData: {
             [self showWaittingHudWithMessage:@"Erasing"];
-            [device eraseAllOfflineDataWithCompletion:^(BOOL bSuccess) {
+            [device eraseAllOfflineDataWithCompletion:^(BOOL bSuccess, NSString *error) {
                 [self hideHud];
                 [tableView beginUpdates];
                 [tableView reloadRow:CellTypeGetOfflineDataInfo inSection:0 withRowAnimation:(UITableViewRowAnimationAutomatic)];

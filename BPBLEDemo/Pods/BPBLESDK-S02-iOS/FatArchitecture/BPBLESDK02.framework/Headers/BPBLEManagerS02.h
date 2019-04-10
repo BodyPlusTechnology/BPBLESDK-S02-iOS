@@ -85,8 +85,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Have batter setup in appdelegate didFinishLaunch. otherwise read property <isBLEPowerOn> may get the incorrect state at the first time.
+ @param key The key of yours, determin if you can use the height level SDK.
  */
-- (void)setup;
+- (void)setupWithKey:(NSString * _Nullable)key;
 
 /*===============================================================
  Multi-Delegate

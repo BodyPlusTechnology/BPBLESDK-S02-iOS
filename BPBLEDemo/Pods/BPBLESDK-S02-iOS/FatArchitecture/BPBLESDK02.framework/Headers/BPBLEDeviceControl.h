@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "BPBLEBaseDevice.h"
 
+
 @class BPBLEDeviceControl;
 @protocol BPBLEDeviceControlDelegate <NSObject>
 @optional

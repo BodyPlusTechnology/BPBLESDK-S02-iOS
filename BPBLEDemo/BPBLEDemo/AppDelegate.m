@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BPBLEDemoVC.h"
-#import <BPBLESDK/BPBLESDKLiteS02.h>
+#import <BPBLESDK02/BPBLESDKLiteS02.h>
 
 @interface AppDelegate ()
 
@@ -19,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [BPBLEManagerS02.defaultManager setup];
+    [BPBLEManagerS02.defaultManager setupWithKey:@""];
     
     BPBLEDemoVC *vc = [BPBLEDemoVC new];
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];

@@ -1,4 +1,4 @@
-![Platform-iOS-blue.svg](https://img.shields.io/badge/Platform-iOS-blue.svg) ![Tag](https://img.shields.io/badge/Support-9.0-green.svg) ![Tag](https://img.shields.io/badge/Language-Objc-light.svg)
+![Platform-iOS-blue.svg](https://img.shields.io/badge/Platform-iOS-blue.svg) ![Tag](https://img.shields.io/badge/Support-9.0-green.svg) ![Tag](https://img.shields.io/badge/Build-Swift4.2-orange.svg) ![Tag](https://img.shields.io/badge/CocoaPods-Support-brightgreen.svg)
 
 # Introduce
 
@@ -177,6 +177,11 @@ In `BPBLEDeviceS02.h`:
 
 See Details in Demo.
 
-Demo building...
+Snapshot:
+
+![img1](BPBLEDemo/Snapshot/demo-3.jpg)
+![img1](BPBLEDemo/Snapshot/demo-2.jpg)
+![img1](BPBLEDemo/Snapshot/demo-1.jpg)
+
 
  

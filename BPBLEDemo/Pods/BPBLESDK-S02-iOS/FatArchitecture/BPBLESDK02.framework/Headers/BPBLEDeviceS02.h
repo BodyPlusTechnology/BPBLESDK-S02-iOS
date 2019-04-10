@@ -10,20 +10,6 @@
 #import "BPBLEDeviceControl.h"
 #import "BPS02OfflineDataModel.h"
 
-//extern NSInteger LATEST_FIRMWARE_VERSION_S02_01;
-
-@class BPBLEDeviceS02;
-@protocol BPBLEDeviceS02Delegate <BPBLEDeviceControlDelegate>
-@optional
-- (void)device:(BPBLEDeviceS02 *)device didUpdateHeartRate:(NSInteger)heartRate breathRate:(NSInteger)breathRate;
-//- (void)device:(BPBLEDeviceS02 *)device didReceiveRawHRData:(NSArray <NSNumber *> *)rawData filterHRData:(NSArray <NSNumber *> *)filterData;
-- (void)device:(BPBLEDeviceS02 *)device didGetHardwareVersion:(NSString *)version;
-- (void)device:(BPBLEDeviceS02 *)device didGetSoftwareVersion:(NSString *)version;
-- (void)devicePositionDidChanged:(BPBLEDeviceS02 *)device;
-- (void)devicePowerStateDidChanged:(BPBLEDeviceS02 *)device;
-
-@end
-
 typedef NS_ENUM(NSUInteger, CoreS02Position) {
     CoreS02PositionChargingBase = 0x00,
     CoreS02PositionCoat         = 0x01,
@@ -48,6 +34,18 @@ typedef NS_ENUM(NSUInteger, CoreS02MonitorMode) {
     CoreS02MonitorModeUnknow
 };
 
+@class BPBLEDeviceS02;
+@protocol BPBLEDeviceS02Delegate <BPBLEDeviceControlDelegate>
+@optional
+- (void)device:(BPBLEDeviceS02 *)device didUpdateHeartRate:(NSInteger)heartRate breathRate:(NSInteger)breathRate;
+//- (void)device:(BPBLEDeviceS02 *)device didReceiveRawHRData:(NSArray <NSNumber *> *)rawData filterHRData:(NSArray <NSNumber *> *)filterData;
+- (void)device:(BPBLEDeviceS02 *)device didGetHardwareVersion:(NSString *)version;
+- (void)device:(BPBLEDeviceS02 *)device didGetSoftwareVersion:(NSString *)version;
+- (void)devicePositionDidChanged:(BPBLEDeviceS02 *)device;
+- (void)devicePowerStateDidChanged:(BPBLEDeviceS02 *)device;
+
+@end
+
 @interface BPBLEDeviceS02 : BPBLEDeviceControl
 
 @property (nonatomic, assign, readonly) BOOL isMonitoringHRBRMode;
@@ -58,9 +56,13 @@ typedef NS_ENUM(NSUInteger, CoreS02MonitorMode) {
 @property (nonatomic, assign, readonly) CoreS02Position currentPosition;
 @property (nonatomic, assign, readonly) CoreS02PowerState currentPowerState;
 @property (nonatomic, assign, readonly) BOOL isECGStateOK;///< ECG是否脱落
-@property (nonatomic, assign, readonly) NSInteger ecgComeOffTimce;///< ECG是否脱落
+@property (nonatomic, assign, readonly) NSInteger ecgComeOffTimce;///< ECG脱落次数
 
 @property (nonatomic, weak) id <BPBLEDeviceS02Delegate> delegate;
+
+@property (nonatomic, assign) NSInteger offlineDataNum;
+@property (nonatomic, assign) NSInteger hrOfflineDataAllFrameRecvLength;///< 总接收长度
+@property (nonatomic, assign) NSInteger hrOfflineDataAllFrameTotalLength;///< 总长度
 
 - (instancetype)initWithBaseDevice:(BPBLEBaseDevice *)baseDevice centralManager:(CBCentralManager *)centralManger;
 
@@ -96,16 +98,9 @@ typedef NS_ENUM(NSUInteger, CoreS02MonitorMode) {
 
 #pragma mark - DFU
 
-- (void)changeToDFUModeWithCompletion:(void (^)(BOOL bSuccess))completion;
+- (void)changeToDFUModeWithCompletion:(void (^)(BOOL bSuccess, NSString *error))completion;
 
-@end
-
-
-@interface BPBLEDeviceS02 ()
-
-@property (nonatomic, assign) NSInteger offlineDataNum;
-@property (nonatomic, assign) NSInteger hrOfflineDataAllFrameRecvLength;///< 总接收长度
-@property (nonatomic, assign) NSInteger hrOfflineDataAllFrameTotalLength;///< 总长度
+#pragma mark - Offline
 
 /**
  Start offline monitoring
@@ -138,6 +133,6 @@ typedef NS_ENUM(NSUInteger, CoreS02MonitorMode) {
 /**
  * Erase all offline Data. Before do this, pls make sure your datas have been archiving successful.
  */
-- (void)eraseAllOfflineDataWithCompletion:(void (^)(BOOL bSuccess))completion;
+- (void)eraseAllOfflineDataWithCompletion:(void (^)(BOOL bSuccess, NSString *error))completion;
 
 @end
