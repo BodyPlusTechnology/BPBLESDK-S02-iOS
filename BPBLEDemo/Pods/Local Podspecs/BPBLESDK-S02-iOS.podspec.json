@@ -1,6 +1,6 @@
 {
   "name": "BPBLESDK-S02-iOS",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": {
     "type": "MIT"
   },
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/BodyPlusTechnology/BPBLESDK-S02-iOS.git",
-    "tag": "0.0.2"
+    "tag": "0.0.3"
   },
   "source_files": "FatArchitecture/BPBLESDK02.framework/Headers/*.{h}",
   "vendored_frameworks": "FatArchitecture/BPBLESDK02.framework",

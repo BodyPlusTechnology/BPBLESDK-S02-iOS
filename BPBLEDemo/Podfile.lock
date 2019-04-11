@@ -1,5 +1,5 @@
 PODS:
-  - BPBLESDK-S02-iOS (0.0.2):
+  - BPBLESDK-S02-iOS (0.0.3):
     - iOSDFULibrary (~> 4.3.0)
     - SSZipArchive (~> 2.1.4)
   - iOSDFULibrary (4.3.0):
@@ -35,11 +35,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   BPBLESDK-S02-iOS:
-    :commit: 5a8b5e60009e9fbb43ab62ef1d002d31320fece6
+    :commit: ea3423b4eb3a2d2ffa68cb495e5359557f0c8e91
     :git: https://github.com/BodyPlusTechnology/BPBLESDK-S02-iOS.git
 
 SPEC CHECKSUMS:
-  BPBLESDK-S02-iOS: 1dd56ee6a4a6d1957a2b1295f64a52947ebcd0e6
+  BPBLESDK-S02-iOS: 90c486f3282ca63a8b4684016418f598dd38deee
   iOSDFULibrary: 41a38d1d2550bf2b0c81e7ccd006af3a96c8149b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
