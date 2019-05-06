@@ -449,6 +449,7 @@ typedef NS_ENUM(NSUInteger, CellType) {
     [_tableView beginUpdates];
     [_tableView reloadRow:CellTypeCorePositionAndPowerState inSection:0 withRowAnimation:UITableViewRowAnimationAutomatic];
     [_tableView reloadRow:CellTypeECGState inSection:0 withRowAnimation:UITableViewRowAnimationAutomatic];
+    [_tableView reloadRow:CellTypeMonitorHRBR inSection:0 withRowAnimation:UITableViewRowAnimationAutomatic];
     [_tableView endUpdates];
 }
 
