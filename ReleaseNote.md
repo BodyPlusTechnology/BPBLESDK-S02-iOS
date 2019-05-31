@@ -1,3 +1,10 @@
+# 0.0.6
+
+1. Fixed DFU permission check error.
+2. Support ZF's BLE Devices.
+3. Support S03 BLE Devices.
+4. Add a manufacturer filter func within scanning.
+
 # 0.0.5
 
 1. Get core's version auto set the display version property.

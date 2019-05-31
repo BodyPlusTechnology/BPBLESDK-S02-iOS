@@ -11,6 +11,8 @@
 #import "BPBLEDFUDevice.h"
 #import "BPS02DFUConfig.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class BPBLEManagerS02;
 @protocol BPBLEManagerS02Delegate <NSObject>
 @optional
@@ -55,7 +57,7 @@ typedef NS_ENUM(NSUInteger, UpgradeState) {
     UpgradeStateUnknow
 };
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface BPBLEManagerS02 : NSObject
 
