@@ -1,3 +1,7 @@
+# 0.0.7
+
+1. Remove check DFU version in the unzipped package.
+
 # 0.0.6
 
 1. Fixed DFU permission check error.
