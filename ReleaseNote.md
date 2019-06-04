@@ -1,3 +1,9 @@
+# 0.0.8
+
+1. Add Erase current offline data API
+2. After sync offline data, if HR array's length not equal BR array's length, then the short array will filling data with last value;
+
+
 # 0.0.7
 
 1. Remove check DFU version in the unzipped package.

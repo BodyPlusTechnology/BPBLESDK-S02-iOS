@@ -23,6 +23,7 @@ typedef NS_ENUM(NSUInteger, CellType) {
     CellTypeGetOfflineMode,
     CellTypeGetOfflineDataInfo,
     CellTypeGetOfflineSync,
+    CellTypeEraseCurrentOfflineData,
     CellTypeEraseOfflineData,
     CellTypeBoostloaderVersion,
     CellTypeRename,
@@ -180,6 +181,11 @@ typedef NS_ENUM(NSUInteger, CellType) {
             cell.detailTextLabel.text = @"Tap to sync data";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }break;
+        case CellTypeEraseCurrentOfflineData: {
+            cell.textLabel.text = @"Erase Current Offline Data:";
+            cell.detailTextLabel.text = @"Tap to erase curData";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }break;
         case CellTypeEraseOfflineData: {
             cell.textLabel.text = @"Erase Offline Data:";
             cell.detailTextLabel.text = @"Tap to erase data";
@@ -263,12 +269,12 @@ typedef NS_ENUM(NSUInteger, CellType) {
             [tableView reloadRow:CellTypeGetOfflineMode inSection:0 withRowAnimation:(UITableViewRowAnimationAutomatic)];
             [tableView endUpdates];
             
-//            [device queryCoreModeWithCompletion:^(BOOL bSuccess, CoreS02MonitorMode mode) {
-//                [tableView beginUpdates];
-//                [tableView reloadRow:CellTypeGetOfflineMode inSection:0 withRowAnimation:(UITableViewRowAnimationAutomatic)];
-//                [tableView reloadRow:CellTypeMonitorHRBR inSection:0 withRowAnimation:(UITableViewRowAnimationAutomatic)];
-//                [tableView endUpdates];
-//            }];
+            //            [device queryCoreModeWithCompletion:^(BOOL bSuccess, CoreS02MonitorMode mode) {
+            //                [tableView beginUpdates];
+            //                [tableView reloadRow:CellTypeGetOfflineMode inSection:0 withRowAnimation:(UITableViewRowAnimationAutomatic)];
+            //                [tableView reloadRow:CellTypeMonitorHRBR inSection:0 withRowAnimation:(UITableViewRowAnimationAutomatic)];
+            //                [tableView endUpdates];
+            //            }];
         }break;
             
         case CellTypeGetOfflineDataInfo: {
@@ -296,13 +302,28 @@ typedef NS_ENUM(NSUInteger, CellType) {
                 
                 [hrDatas writeToFile:hrPath atomically:YES];
                 [brDatas writeToFile:brPath atomically:YES];
+                [self showHudWithMessage:[NSString stringWithFormat:@"Count: HR:%ld,BR:%ld",
+                                          hrDatas.count,
+                                          brDatas.count]];
             }];
             
+        }break;
+        case CellTypeEraseCurrentOfflineData: {
+            [BPBLEManagerS02.defaultManager.currentDevice eraseCurrentOfflineDataWithCompletion:^(BOOL bSuccess, NSString *error) {
+                [tableView beginUpdates];
+                [tableView reloadRow:CellTypeGetOfflineDataInfo inSection:0 withRowAnimation:(UITableViewRowAnimationAutomatic)];
+                [tableView reloadRow:CellTypeEraseCurrentOfflineData inSection:0 withRowAnimation:(UITableViewRowAnimationAutomatic)];
+                [tableView endUpdates];
+            }];
         }break;
         case CellTypeEraseOfflineData: {
             [self showWaittingHudWithMessage:@"Erasing"];
             [device eraseAllOfflineDataWithCompletion:^(BOOL bSuccess, NSString *error) {
                 [self hideHud];
+                if (!bSuccess) {
+                    [self showHudWithMessage:error];
+                    return;
+                }
                 [tableView beginUpdates];
                 [tableView reloadRow:CellTypeGetOfflineDataInfo inSection:0 withRowAnimation:(UITableViewRowAnimationAutomatic)];
                 [tableView endUpdates];
@@ -355,8 +376,8 @@ typedef NS_ENUM(NSUInteger, CellType) {
             [self showWaittingHudWithMessage:@"Upgrading" progress:0.01];
             BPS02DFUConfig *config = [BPS02DFUConfig defaultConfig];
             // In demo , for testing upgrade can set a big version num to always upgrading when tap, otherwise will notice 'Already leatest version' and skip upgrade.
-            config.latestFirmwareVersion = 0xFFFF;
-            config.latestBoostloaderVersion = 5;
+            //            config.latestFirmwareVersion = 0xFFFF;
+            //            config.latestBoostloaderVersion = 5;
             
             [BPBLEManagerS02.defaultManager startUpgradeWithDevice:device config:config stateChangedHandler:^(UpgradeState state) {
                 NSLog(@"Upgrade State >>> %@", @(state));
@@ -376,13 +397,36 @@ typedef NS_ENUM(NSUInteger, CellType) {
             }];
         }break;
         case CellTypeStartBoostloaderUpgrade: {
-            [self showWaittingHudWithMessage:@"Upgrading" progress:0.01];
-            BPS02DFUConfig *config = [BPS02DFUConfig defaultConfig];
+            BOOL needUpgrade = NO;
+            BPS02DFUConfig *dfuConfig = [BPS02DFUConfig defaultConfig];
             // In demo , for testing upgrade can set a big version num to always upgrading when tap, otherwise will notice 'Already leatest version' and skip upgrade.
-            config.latestFirmwareVersion = 0xFFFF;
-            config.latestBoostloaderVersion = 6;
+            //            config.latestFirmwareVersion = 0xFFFF;
+            //            config.latestBoostloaderVersion = 6;
+            // or
+            //#if DEBUG
+            //    static BOOL hasDFU = NO;
+            //    if (!hasDFU) {
+            //        hasDFU = YES;
+            //        dfuConfig.latestFirmwareVersion = 0xFFFF;
+            //    }
+            //#endif
+            if (device.boostloaderVersion < dfuConfig.latestBoostloaderVersion) {
+                needUpgrade = YES;
+            }
             
-            [BPBLEManagerS02.defaultManager startUpgradeWithDevice:device config:config stateChangedHandler:^(UpgradeState state) {
+            NSInteger hexVersion = [[NSString stringWithFormat:@"%lx", device.firmwareVersion] integerValue];
+            if (hexVersion < dfuConfig.latestFirmwareVersion) {
+                needUpgrade = YES;
+            }
+            
+            if (!needUpgrade) {
+                [self showHudWithMessage:@"Was latest version"];
+                return;
+            }
+            
+            [self showWaittingHudWithMessage:@"Upgrading" progress:0.01];
+            
+            [BPBLEManagerS02.defaultManager startUpgradeWithDevice:device config:dfuConfig stateChangedHandler:^(UpgradeState state) {
                 NSLog(@"Upgrade State >>> %@", @(state));
             } progressHandler:^(CGFloat progress) {
                 [self showWaittingHudWithMessage:@"Upgrading" progress:progress];
