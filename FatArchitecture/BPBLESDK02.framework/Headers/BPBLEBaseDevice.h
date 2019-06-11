@@ -29,8 +29,8 @@
 
 @property (nonatomic, assign) CGFloat  battery;
 @property (nonatomic, assign) BOOL isDFUMode;
-@property (nonatomic, assign) NSInteger hardwareVersion;///< 硬件版本
-@property (nonatomic, assign) NSInteger firmwareVersion;///< 固件号
+@property (nonatomic, assign) NSInteger hardwareVersion;///< 硬件版本 Dec
+@property (nonatomic, assign) NSInteger firmwareVersion;///< 固件号 Dec
 @property (nonatomic, assign) NSInteger boostloaderVersion;
 @property (nonatomic, strong) NSString *dispHWVersion;///< 硬件版本
 @property (nonatomic, strong) NSString *dispFWVersion;///< 固件号

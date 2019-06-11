@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'BPBLESDK-S02-iOS'
-  s.version      = '0.0.8'
+  s.version      = '1.0.0'
   s.license      = { :type => 'MIT'}
   s.homepage     = 'https://github.com/BodyPlusTechnology/BPBLESDK-S02-iOS'
   s.authors      = {'GrayLand119' => '441726442@qq.com'}

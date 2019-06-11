@@ -58,6 +58,7 @@ typedef NS_ENUM(NSUInteger, UpgradeState) {
 };
 
 
+#define BPCurrentDevice (BPBLEManagerS02.defaultManager.currentDevice)
 
 @interface BPBLEManagerS02 : NSObject
 
@@ -174,6 +175,24 @@ typedef NS_ENUM(NSUInteger, UpgradeState) {
                progressHandler:(void(^)(CGFloat progress))progressHandler
                 successHandler:(void(^)(BPBLEDeviceS02 *reconnectedDevice))successHandler
                 failureHandler:(void(^)(NSInteger errorCode, NSString *msg))failureHandler;
+
+/**
+ Auto upgrade device boostloader and firmware, all of the params must be nonull.
+ 
+ @param device A device type of BPDFUDevice.
+ @param config Can use [BPS02DFUConfig defaultConfig].
+ @param stateChangedHandler The state in upgrade processing flow.
+ @param progressHandler progress callback.
+ @param successHandler Upgrade finish callback.
+ @param failureHandler ErrorCode, 1-device or config is nil/2-pacakge not found/3-unzip error/4-package content missing
+ */
+- (void)processConnectedDFUDevice:(BPBLEDFUDevice *)dfuDevice
+                           config:(BPS02DFUConfig *)config
+              stateChangedHandler:(void(^)(UpgradeState state))stateChangedHandler
+                  progressHandler:(void(^)(CGFloat progress))progressHandler
+                   successHandler:(void(^)(BPBLEDeviceS02 *reconnectedDevice))successHandler
+                   failureHandler:(void(^)(NSInteger errorCode, NSString *msg))failureHandler;
+
 @end
 
 NS_ASSUME_NONNULL_END
