@@ -1,5 +1,5 @@
 PODS:
-  - BPBLESDK-S02-iOS (0.0.3):
+  - BPBLESDK-S02-iOS (0.0.8):
     - iOSDFULibrary (~> 4.3.0)
     - SSZipArchive (~> 2.1.4)
   - iOSDFULibrary (4.3.0):
@@ -10,7 +10,7 @@ PODS:
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
-  - ZIPFoundation (0.9.8)
+  - ZIPFoundation (0.9.9)
 
 DEPENDENCIES:
   - BPBLESDK-S02-iOS (from `https://github.com/BodyPlusTechnology/BPBLESDK-S02-iOS.git`)
@@ -35,18 +35,18 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   BPBLESDK-S02-iOS:
-    :commit: ea3423b4eb3a2d2ffa68cb495e5359557f0c8e91
+    :commit: aac77aa35862c2113546f78f19741da8f6bb2dfa
     :git: https://github.com/BodyPlusTechnology/BPBLESDK-S02-iOS.git
 
 SPEC CHECKSUMS:
-  BPBLESDK-S02-iOS: 90c486f3282ca63a8b4684016418f598dd38deee
+  BPBLESDK-S02-iOS: b308c50fbc1591ca0760bbd89dbf9c79fc3253fd
   iOSDFULibrary: 41a38d1d2550bf2b0c81e7ccd006af3a96c8149b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SSZipArchive: cefe1364104a0231268a5deb8495bdf2861f52f0
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
-  ZIPFoundation: b1f07e4409baf1641f3fe5948b2a1c3f5c500cb1
+  ZIPFoundation: 89df685c971926b0323087952320bdfee9f0b6ef
 
-PODFILE CHECKSUM: 4c77a1ae6859fb3008b696d695709e6137c07e3f
+PODFILE CHECKSUM: 71ad9e878fb85b8f60690eaca087c15c8406f42d
 
 COCOAPODS: 1.6.1

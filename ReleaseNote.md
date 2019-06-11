@@ -1,3 +1,9 @@
+# 1.0.0 (Release)
+
+1. DFU Devices Detect.
+2. Connect a DFU Device can continue Upgrading.
+3. Add Manufacturer Filter within scanning method.
+
 # 0.0.8
 
 1. Add Erase current offline data API

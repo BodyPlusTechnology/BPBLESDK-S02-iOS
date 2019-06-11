@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger latestFirmwareVersion;
 @property (nonatomic, assign) NSInteger latestBoostloaderVersion;
 
-+ (instancetype)defaultConfig;
++ (instancetype)defaultConfigWithPackageDir:(NSString * _Nullable)packageDir;
 
 @end
 

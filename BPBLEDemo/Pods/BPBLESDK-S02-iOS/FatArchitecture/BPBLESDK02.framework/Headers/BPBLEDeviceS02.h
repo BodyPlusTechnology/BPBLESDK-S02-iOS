@@ -135,4 +135,9 @@ typedef NS_ENUM(NSUInteger, CoreS02MonitorMode) {
  */
 - (void)eraseAllOfflineDataWithCompletion:(void (^)(BOOL bSuccess, NSString *error))completion;
 
+/**
+ * Erase current offline Data. Before do this, pls make sure your datas have been archiving successful.
+ */
+- (void)eraseCurrentOfflineDataWithCompletion:(void (^)(BOOL bSuccess, NSString *error))completion;
+
 @end

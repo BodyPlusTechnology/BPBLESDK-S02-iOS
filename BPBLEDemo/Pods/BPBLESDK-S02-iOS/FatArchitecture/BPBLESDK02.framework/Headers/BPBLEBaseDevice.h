@@ -36,7 +36,12 @@
 @property (nonatomic, strong) NSString *dispFWVersion;///< 固件号
 @property (nonatomic, assign) BOOL hasVersionInAdvertisementData;
 @property (nonatomic, strong) NSString *localName;
-@property (nonatomic, strong) NSString *SN;
 @property (nonatomic, assign) NSInteger hwVersionInAD;
+
+@property (nonatomic, strong, readonly) NSString *manufacturerID;///< 厂商信息
+@property (nonatomic, strong, readonly) NSString *SN;
+
+@property (nonatomic, assign, readonly) BOOL isZFDevice;
+@property (nonatomic, assign, readonly) BOOL isS03;
 
 @end

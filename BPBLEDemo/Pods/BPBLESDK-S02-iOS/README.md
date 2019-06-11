@@ -26,6 +26,9 @@ or
 > pod 'BPBLESDK-S02-iOS', :git => 'https://github.com/BodyPlusTechnology/BPBLESDK-S02-iOS.git'
 
 
+# Release Note 
+
+[Release Note](ReleaseNote.md)
 
 # API Preview
 
