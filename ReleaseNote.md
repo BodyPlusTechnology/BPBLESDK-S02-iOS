@@ -1,4 +1,8 @@
-# 1.0.0 (Release)
+# 1.0.1 
+
+1. Start monintoring HeartRate and BreathRate may be failed when Core is Isolating.
+
+# 1.0.0 
 
 1. DFU Devices Detect.
 2. Connect a DFU Device can continue Upgrading.
