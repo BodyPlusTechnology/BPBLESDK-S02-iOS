@@ -28,4 +28,5 @@ FOUNDATION_EXPORT const unsigned char BPBLESDK02VersionString[];
 
 #import <BPBLESDK02/BPS02DFUConfig.h>
 #import <BPBLESDK02/BPS02OfflineDataModel.h>
-
+#import <BPBLESDK02/BPBLEManagerS02+Config.h>
+#import <BPBLESDK02/NSObject+BLEVersion.h>

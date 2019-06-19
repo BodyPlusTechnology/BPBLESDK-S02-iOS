@@ -1,3 +1,8 @@
+# 1.0.2 
+
+1. Add `BPBLEManagerS02+Config.h` to help check defice if need to firmware upgrade.
+
+
 # 1.0.1 
 
 1. Start monintoring HeartRate and BreathRate may be failed when Core is Isolating.
