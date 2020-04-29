@@ -1,3 +1,9 @@
+# 1.0.3 
+
+1. Update SN-Code filter for support iOS13.
+2. Update DFUConfig method.
+
+
 # 1.0.2 
 
 1. Add `BPBLEManagerS02+Config.h` to help check defice if need to firmware upgrade.
