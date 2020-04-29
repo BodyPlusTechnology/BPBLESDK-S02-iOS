@@ -17,11 +17,19 @@ SDK provides these major functions blow:
 
 # Cocoa Pods 
 
-Add Codes in Podfile:
+For cocoapods 1.7.0+:
+
+Add Codes in Podfile at Top Of File:
+
+> source 'https://github.com/BodyPlusTechnology/BPBLESDK-S02-iOS.git'
+
+And then add reference codes below:
 
 > pod 'BPBLESDK-S02-iOS'
 
-or 
+For cocodpods version less than 1.7.0:
+
+Add Codes in Podfile to use latest version:
 
 > pod 'BPBLESDK-S02-iOS', :git => 'https://github.com/BodyPlusTechnology/BPBLESDK-S02-iOS.git'
 
