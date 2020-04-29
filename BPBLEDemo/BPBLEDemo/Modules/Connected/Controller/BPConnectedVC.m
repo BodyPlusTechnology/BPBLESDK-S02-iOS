@@ -374,7 +374,7 @@ typedef NS_ENUM(NSUInteger, CellType) {
         }break;
         case CellTypeStartFirmwareUpgrade: {
             [self showWaittingHudWithMessage:@"Upgrading" progress:0.01];
-            BPS02DFUConfig *config = [BPS02DFUConfig defaultConfig];
+            BPS02DFUConfig *config = [BPS02DFUConfig defaultConfigWithPackageDir:nil];
             // In demo , for testing upgrade can set a big version num to always upgrading when tap, otherwise will notice 'Already leatest version' and skip upgrade.
             //            config.latestFirmwareVersion = 0xFFFF;
             //            config.latestBoostloaderVersion = 5;
@@ -398,7 +398,7 @@ typedef NS_ENUM(NSUInteger, CellType) {
         }break;
         case CellTypeStartBoostloaderUpgrade: {
             BOOL needUpgrade = NO;
-            BPS02DFUConfig *dfuConfig = [BPS02DFUConfig defaultConfig];
+            BPS02DFUConfig *dfuConfig = [BPS02DFUConfig defaultConfigWithPackageDir:nil];
             // In demo , for testing upgrade can set a big version num to always upgrading when tap, otherwise will notice 'Already leatest version' and skip upgrade.
             //            config.latestFirmwareVersion = 0xFFFF;
             //            config.latestBoostloaderVersion = 6;

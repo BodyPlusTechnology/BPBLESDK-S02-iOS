@@ -4,8 +4,11 @@ platform :ios, '9.0'
 target 'BPBLEDemo' do
   use_frameworks!
   inhibit_all_warnings!
-
-  pod 'BPBLESDK-S02-iOS', :git => 'https://github.com/BodyPlusTechnology/BPBLESDK-S02-iOS.git'
+  
+  # Test Local
+  pod 'BPBLESDK-S02-iOS', :path => '../'
+  # Test Pod
+#  pod 'BPBLESDK-S02-iOS', :git => 'https://github.com/BodyPlusTechnology/BPBLESDK-S02-iOS.git'
   pod 'Masonry', '1.1.0'
   pod 'MBProgressHUD', '~> 1.0.0'
   pod 'YYKit'
